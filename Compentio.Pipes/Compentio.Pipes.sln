@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compentio.Pipes.App", "Compentio.Pipes.App\Compentio.Pipes.App.csproj", "{CC36BD71-9994-4A93-8716-740F5FAFDBA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compentio.Pipes", "Compentio.Pipes\Compentio.Pipes.csproj", "{57CD56BA-0D30-482E-9D87-24AC030227D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC36BD71-9994-4A93-8716-740F5FAFDBA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC36BD71-9994-4A93-8716-740F5FAFDBA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC36BD71-9994-4A93-8716-740F5FAFDBA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC36BD71-9994-4A93-8716-740F5FAFDBA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57CD56BA-0D30-482E-9D87-24AC030227D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57CD56BA-0D30-482E-9D87-24AC030227D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57CD56BA-0D30-482E-9D87-24AC030227D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57CD56BA-0D30-482E-9D87-24AC030227D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13D9FDF5-9D7D-44AB-A1D4-EB33D2F5DD63}
+	EndGlobalSection
+EndGlobal
