@@ -9,18 +9,14 @@ namespace Compentio.Pipes.Server
 {
     public class PipeServer : IPipeServer
     {
-        #region private fields
-
         private const int MaxNumberOfServerInstances = 10;
         private readonly string _pipeName;
         private readonly SynchronizationContext _synchronizationContext;
         private readonly IDictionary<string, IPipeServer> _servers;
 
-        #endregion
-
         public PipeServer(string serverName)
         {
-            _pipeName = serverName; //Guid.NewGuid().ToString();
+            _pipeName = serverName;
             _synchronizationContext = AsyncOperationManager.SynchronizationContext;
             _servers = new ConcurrentDictionary<string, IPipeServer>();
         }
@@ -37,10 +33,7 @@ namespace Compentio.Pipes.Server
 
         #region IPipeServer implementation
 
-        public string ServerId
-        {
-            get { return _pipeName; }
-        }
+        public string ServerId => _pipeName;
 
         public void Start()
         {

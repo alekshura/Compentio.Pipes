@@ -48,7 +48,7 @@ namespace Compentio.Pipes.Client
         }
 
         /// <summary>
-        /// Sends message to the server
+        /// Sends string message to the server
         /// </summary>
         /// <param name="message">Message to be sent</param>
         /// <returns>Async result</returns>

@@ -145,7 +145,7 @@ namespace Compentio.Pipes.Server
             var readBytes = _pipeServer.EndRead(result);
             if (readBytes > 0)
             {
-                var info = (Info) result.AsyncState;
+                var info = (Info)result.AsyncState;
 
                 // Get the read bytes and append them
                 info.StringBuilder.Append(Encoding.UTF8.GetString(info.Buffer, 0, readBytes));
