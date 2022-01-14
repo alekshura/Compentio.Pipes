@@ -1,4 +1,4 @@
-﻿namespace Compentio.Pipes.WebApi.Dto
+﻿namespace Compentio.Pipes.Contracts
 {
     public record Note
     {

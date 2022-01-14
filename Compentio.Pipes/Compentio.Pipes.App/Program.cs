@@ -1,5 +1,7 @@
-﻿using Compentio.Pipes.Server;
+﻿using Compentio.Pipes.Contracts;
+using Compentio.Pipes.Server;
 using System;
+using System.Text.Json;
 
 namespace Compentio.Pipes.App
 {
@@ -15,7 +17,8 @@ namespace Compentio.Pipes.App
 
         private static void ReceiveMessage(object sender, MessageReceivedEventArgs args)
         {
-            if (args.Message == "MessageToSend")
+            var message = JsonSerializer.Deserialize<Note>(args.Message);
+            if (message is not null)
             {
                 Console.WriteLine(args.Message);
             }

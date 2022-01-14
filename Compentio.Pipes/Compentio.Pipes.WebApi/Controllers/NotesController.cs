@@ -1,8 +1,9 @@
 ﻿using Compentio.Pipes.Client;
-using Compentio.Pipes.WebApi.Dto;
+using Compentio.Pipes.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Compentio.Pipes.WebApi.Controllers
@@ -23,7 +24,7 @@ namespace Compentio.Pipes.WebApi.Controllers
         public async Task<IEnumerable<Note>> Get()
         {
             var note = new Note { Id = 1, Title = "Title", Value = "Value" };
-            await _pipeClient.SendMessage("MessageToSend");
+            await _pipeClient.SendMessage(JsonSerializer.Serialize(note));
 
             //_pipeClient.Stop();
 

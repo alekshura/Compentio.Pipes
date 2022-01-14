@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Compentio.Pipes.Contracts\Compentio.Pipes.Contracts.csproj" />
     <ProjectReference Include="..\Compentio.Pipes\Compentio.Pipes.csproj" />
   </ItemGroup>
 
