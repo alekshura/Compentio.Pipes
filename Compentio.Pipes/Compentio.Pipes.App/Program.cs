@@ -1,5 +1,4 @@
-﻿using Compentio.Pipes.Client;
-using Compentio.Pipes.Server;
+﻿using Compentio.Pipes.Server;
 using System;
 
 namespace Compentio.Pipes.App
@@ -8,16 +7,15 @@ namespace Compentio.Pipes.App
     {
         static void Main(string[] args)
         {
-            var _pipeServer = new PipeServer("TestPipe");
-            _pipeServer.Start();
-            _pipeServer.MessageReceivedEvent += (sender, args) => ReceiveMessage(sender, args);
-            
+            var pipeServer = new PipeServer("TestPipe");
+            pipeServer.Start();
+            pipeServer.MessageReceivedEvent += (sender, args) => ReceiveMessage(sender, args);            
             Console.ReadKey();
         }
 
         private static void ReceiveMessage(object sender, MessageReceivedEventArgs args)
         {
-            if (args.Message == "StartBatchProcess")
+            if (args.Message == "MessageToSend")
             {
                 Console.WriteLine(args.Message);
             }

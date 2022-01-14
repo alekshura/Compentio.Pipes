@@ -2,6 +2,7 @@
 using System.IO;
 using System.IO.Pipes;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Compentio.Pipes.Extensions;
 
@@ -18,9 +19,7 @@ namespace Compentio.Pipes.Client
 
         #region ICommunicationClient implementation
 
-        /// <summary>
-        /// Starts the client. Connects to the server.
-        /// </summary>
+        ///<inheritdoc/>
         public void Start()
         {
             // 5 minutes
@@ -31,9 +30,7 @@ namespace Compentio.Pipes.Client
             }
         }
 
-        /// <summary>
-        /// Stops the client. Waits for pipe drain, closes and disposes it.
-        /// </summary>
+        ///<inheritdoc/>
         public void Stop()
         {
             try
@@ -47,11 +44,7 @@ namespace Compentio.Pipes.Client
             }
         }
 
-        /// <summary>
-        /// Sends string message to the server
-        /// </summary>
-        /// <param name="message">Message to be sent</param>
-        /// <returns>Async result</returns>
+        ///<inheritdoc/>
         public Task<TaskResult> SendMessage(string message)
         {
             var taskCompletionSource = new TaskCompletionSource<TaskResult>();
