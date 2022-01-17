@@ -9,7 +9,7 @@ Provides interprocess communication between a pipe server and one or more pipe c
 ## How to use 
 Just setup pipe cient and server in your apps and send command to server. 
 In example below Web API app sends message to console application (It can be any app). 
-First, in our console app we start `PipeServer` and setup it for listening for messages:
+In server app start `PipeServer` and setup it for listening for messages:
 
 ```csharp
 internal static class Program
@@ -32,7 +32,7 @@ internal static class Program
 	}
 }
 ```
-And a client application (for simplicity it is done in `ApiController`):
+In a client application create start pipe client `_pipeClient.Start()` (for simplicity it is done in `ApiController`):
 
 ```cs
 [ApiController]
@@ -72,4 +72,4 @@ services.AddSingleton<IPipeClient>(factory => new PipeClient("TestPipe"));
 ```
 with `TestPipe` name. It is important that your server also created with `TestPipe` name.
 
-Here we simply can send message (or more precisely, command) to another process or thread. This command is serialized on client and deserialized on the server. Pipe client and server here act as transport layer without binding to certain object types - developer is responsible to properly serialize and deserialize messages that defined in contracts assembly that is shared between applications. 
+Here we simply can send message (or command) to another process or thread. This command is serialized on client and deserialized on the server. Pipe client and server here act as transport layer without binding to certain object types - developer is responsible to properly serialize and deserialize messages that defined in contracts assembly that is shared between applications. 
