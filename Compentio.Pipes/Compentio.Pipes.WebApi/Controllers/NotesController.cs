@@ -9,7 +9,7 @@ namespace Compentio.Pipes.WebApi.Controllers
 {
     [ApiController]
     [Route("notes")]
-    public class NotesController : ControllerBase
+    public class NotesController : ControllerBase, INotes
     {
         private readonly IPipeClient _pipeClient;
 
@@ -20,7 +20,7 @@ namespace Compentio.Pipes.WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Note>> Get()
+        public async Task<IEnumerable<Note>> GetNotes()
         {
             var note = new Note { Id = 1, Title = "Title", Value = "Value" };
             await _pipeClient.SendMessage(JsonSerializer.Serialize(note));
